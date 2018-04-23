@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" TestRunTimeLimit="3" >
+	<Applications>
+		<!-- Win -->
+		<Application
+			Name="E965Win"
+			FileName="[ConfigPath]\..\E965.Win\Bin\EasyTest\E965.Win.exe"
+			AdapterAssemblyName="DevExpress.ExpressApp.EasyTest.WinAdapter.v16.2, Version=16.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+			CommunicationPort="4100"/>
+		<!-- Web -->
+		<Application
+			Name="E965Web"
+			Url="http://localhost:4030"
+			PhysicalPath="[ConfigPath]\..\E965.Web"
+			AdapterAssemblyName="DevExpress.ExpressApp.EasyTest.WebAdapter.v16.2, Version=16.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+	</Applications>
+	<TestDatabases>
+		<Database xsi:type="TestMSSQLDatabase" Server="(local)" DBName="E965_EasyTest" />
+	</TestDatabases>
+</Options>
