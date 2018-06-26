@@ -26,7 +26,7 @@ namespace FileSystemData.BusinessObjects {
             }
         }
         protected virtual void SaveFileToStore() {
-            if(!string.IsNullOrEmpty(RealFileName)) {
+            if(!string.IsNullOrEmpty(RealFileName) && TempSourceStream != null)  {
                 try {
                     using(Stream destination = File.Create(RealFileName)) { //T582918
                         FileSystemDataModule.CopyStream(TempSourceStream, destination);

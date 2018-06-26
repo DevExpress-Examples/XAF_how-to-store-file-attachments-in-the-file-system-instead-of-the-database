@@ -33,7 +33,7 @@ Namespace FileSystemData.BusinessObjects
 			End Get
 		End Property
 		Protected Overridable Sub SaveFileToStore()
-			If Not String.IsNullOrEmpty(RealFileName) Then
+		    If Not String.IsNullOrEmpty(RealFileName) And (Not (TempSourceStream Is Nothing)) Then
 				Try
 					Using destination As Stream = File.Create(RealFileName) 'T582918
 						FileSystemDataModule.CopyStream(TempSourceStream, destination)
