@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [FileSystemLinkObject.cs](./CS/FileSystemData/BusinessObjects/FileSystemLinkObject.cs) (VB: [FileSystemLinkObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemLinkObject.vb))
+* **[FileSystemStoreObject.cs](./CS/FileSystemData/BusinessObjects/FileSystemStoreObject.cs) (VB: [FileSystemStoreObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemStoreObject.vb))**
+<!-- default file list end -->
 # How to: Store file attachments in the file system instead of the database (XPO)
 
 
