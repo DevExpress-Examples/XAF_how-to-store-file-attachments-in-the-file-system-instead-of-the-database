@@ -1,3 +1,13 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [E965.ets](./CS/E965.EasyTests/E965.ets)
+* [FileSystemLinkObjectDemo.cs](./CS/E965.Module/BusinessObjects/FileSystemLinkObjectDemo.cs) (VB: [FileSystemLinkObjectDemo.vb](./VB/E965.Module/BusinessObjects/FileSystemLinkObjectDemo.vb))
+* [FileSystemStoreObjectDemo.cs](./CS/E965.Module/BusinessObjects/FileSystemStoreObjectDemo.cs) (VB: [FileSystemStoreObjectDemo.vb](./VB/E965.Module/BusinessObjects/FileSystemStoreObjectDemo.vb))
+* [WinApplication.cs](./CS/E965.Win/WinApplication.cs) (VB: [WinApplication.vb](./VB/E965.Win/WinApplication.vb))
+* [FileSystemLinkObject.cs](./CS/FileSystemData/BusinessObjects/FileSystemLinkObject.cs) (VB: [FileSystemLinkObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemLinkObject.vb))
+* **[FileSystemStoreObject.cs](./CS/FileSystemData/BusinessObjects/FileSystemStoreObject.cs) (VB: [FileSystemStoreObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemStoreObject.vb))**
+<!-- default file list end -->
 # How to: Store file attachments in the file system instead of the database (XPO)
 
 
