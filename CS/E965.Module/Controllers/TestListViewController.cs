@@ -27,7 +27,7 @@ namespace E965.Module.Controllers {
                 tasks[i] = Task.Factory.StartNew(() => {
                     for (int j = 0; j < MaxTestersCount; j++) {
                         Stream testStream = GetType().Assembly.GetManifestResourceStream("E965.Module.Controllers.Test.file");
-                        using (IObjectSpace os = Application.CreateObjectSpace()) {
+                        using (IObjectSpace os = Application.CreateObjectSpace(typeof(FileSystemStoreObject))) {
                             try {
                                 IFileData theObject = os.CreateObject<FileSystemStoreObject>();
                                 if (!((IEmptyCheckable)theObject).IsEmpty)
