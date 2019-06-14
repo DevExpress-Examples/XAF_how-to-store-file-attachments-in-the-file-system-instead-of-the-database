@@ -29,7 +29,7 @@ Namespace E965.Module.Controllers
 				tasks(i) = Task.Factory.StartNew(Sub()
 					For j As Integer = 0 To MaxTestersCount - 1
 						Dim testStream As Stream = Me.GetType().Assembly.GetManifestResourceStream("Test.file")
-						Using os As IObjectSpace = Application.CreateObjectSpace()
+						Using os As IObjectSpace = Application.CreateObjectSpace(GetType(FileSystemStoreObject))
 							Try
 								Dim theObject As IFileData = os.CreateObject(Of FileSystemStoreObject)()
 								If Not DirectCast(theObject, IEmptyCheckable).IsEmpty Then
