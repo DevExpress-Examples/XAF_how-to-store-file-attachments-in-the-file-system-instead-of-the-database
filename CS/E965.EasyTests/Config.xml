@@ -5,14 +5,14 @@
 		<Application
 			Name="E965Win"
 			FileName="[ConfigPath]\..\E965.Win\Bin\EasyTest\E965.Win.exe"
-			AdapterAssemblyName="DevExpress.ExpressApp.EasyTest.WinAdapter.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+			AdapterAssemblyName="DevExpress.ExpressApp.EasyTest.WinAdapter.v16.2"
 			CommunicationPort="4100"/>
 		<!-- Web -->
 		<Application
 			Name="E965Web"
 			Url="http://localhost:4030"
 			PhysicalPath="[ConfigPath]\..\E965.Web"
-			AdapterAssemblyName="DevExpress.ExpressApp.EasyTest.WebAdapter.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+			AdapterAssemblyName="DevExpress.ExpressApp.EasyTest.WebAdapter.v16.2"/>
 	</Applications>
 	<TestDatabases>
 		<Database xsi:type="TestMSSQLDatabase" Server="(local)" DBName="E965_EasyTest" />
