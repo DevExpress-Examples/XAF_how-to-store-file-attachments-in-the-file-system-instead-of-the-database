@@ -27,9 +27,9 @@
 
 
 <p>Of course, you can rework this code to use UnitOfWork instead of IObjectSpace.</p>
-<p> </p>
-<p><strong>See Also:</strong><br> <a href="http://documentation.devexpress.com/#Xaf/CustomDocument2781"><u>File Attachments Module Overview</u></a><br> <a href="http://dennisgaravsky.blogspot.ru/2012/10/working-with-links-to-files-instead-of.html"><u>Working with links to files instead of storing their contents in the database</u></a><br> <a href="http://technet.microsoft.com/en-us/library/bb933993(v=sql.105).aspx"><u>SQL Server FILESTREAM feature Overview</u></a></p>
 
-<br/>
-
-
+## See Also
+- <a href="http://documentation.devexpress.com/#Xaf/CustomDocument2781">File Attachments Module Overview</a>
+- <a href="http://dennisgaravsky.blogspot.com/2012/10/working-with-links-to-files-instead-of.html">Working with links to files instead of storing their contents in the database</a>
+- [XAF - Store file attachments in Dropbox instead of the database](https://github.com/egarim/FileDataDropBox) (XPO) ([videos](https://youtu.be/lVfUeDj9T7U) and [additional information](https://www.bitframeworks.com/devexpress-xaf-cloud-filedata-module/) on XAF Cloud FileData Module by BitFrameworks
+- <a href="http://technet.microsoft.com/en-us/library/bb933993(v=sql.105).aspx"><u>SQL Server FILESTREAM feature Overview</a>
