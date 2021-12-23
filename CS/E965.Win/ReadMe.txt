@@ -1,31 +1,34 @@
 ﻿Project Description
 
-The E965.Win project implements a Windows Forms application. The root project folder 
-contains the WinApplication.cs(vb) file with the class that inherits 
-WinApplication. This class can be designed with the Application Designer that 
-allows you to view and customize application components: referenced modules, 
-security settings, data connection. Additionally, the root folder contains 
-Application Model difference files (XAFML files) that keep application settings 
-specific for the current application. Differences files can be designed with 
-the Model Editor.  
+This project implements a WinForms application. The root project folder 
+contains the WinApplication.cs(vb) file with the class that inherits WinApplication.
+This class allows you to view and customize Module components:
+referenced modules, Controllers and business classes. Additionally, the root folder
+contains Application Model difference files (XAFML files) that keep application
+settings specific for the current Module. Difference files can be customized in code
+or in the Model Editor.
 
 
 Relevant Documentation
 
 Application Solution Components
-http://help.devexpress.com/#Xaf/CustomDocument2569
+https://docs.devexpress.com/eXpressAppFramework/112569
+
+XAF Community Extensions
+https://www.devexpress.com/products/net/application_framework/#extensions
+
+Debugging, Unit and Functional Testing
+https://docs.devexpress.com/eXpressAppFramework/112572
 
 WinApplication Class
-http://help.devexpress.com/#Xaf/clsDevExpressExpressWinWinApplicationtopic
+https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.Win.WinApplication
 
 XafApplication Class
-http://help.devexpress.com/#Xaf/clsDevExpressExpressXafApplicationtopic
+https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.XafApplication
 
-Application Designer
-http://help.devexpress.com/#Xaf/CustomDocument2827
 
 Application Model
-http://help.devexpress.com/#Xaf/CustomDocument2579
+https://docs.devexpress.com/eXpressAppFramework/112579
 
 Model Editor
-http://help.devexpress.com/#Xaf/CustomDocument2582
+https://docs.devexpress.com/eXpressAppFramework/112582

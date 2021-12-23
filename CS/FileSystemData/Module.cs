@@ -23,7 +23,12 @@ namespace FileSystemData {
         }
         public static void OpenFileWithDefaultProgram(string sourceFileName) {
             Guard.ArgumentNotNullOrEmpty(sourceFileName, "sourceFileName");
-            System.Diagnostics.Process.Start(sourceFileName);
+
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+
+            process.StartInfo.UseShellExecute = true;
+            process.StartInfo.FileName = sourceFileName;
+            process.Start();
         }
         public static void CopyStream(Stream source, Stream destination) {
             if (source == null || destination == null) return;

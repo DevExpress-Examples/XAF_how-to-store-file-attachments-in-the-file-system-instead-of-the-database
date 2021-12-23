@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Configuration;
 using System.Web.Configuration;
 using System.Web;
+using System.Web.Routing;
 
 using DevExpress.ExpressApp;
 using DevExpress.Persistent.Base;
@@ -9,6 +10,7 @@ using DevExpress.Persistent.BaseImpl;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Web;
 using DevExpress.Web;
+using DevExpress.ExpressApp.Xpo;
 
 namespace E965.Web {
     public class Global : System.Web.HttpApplication {
@@ -16,36 +18,36 @@ namespace E965.Web {
             InitializeComponent();
         }
         protected void Application_Start(Object sender, EventArgs e) {
+            DevExpress.ExpressApp.FrameworkSettings.DefaultSettingsCompatibilityMode = DevExpress.ExpressApp.FrameworkSettingsCompatibilityMode.Latest;
+            RouteTable.Routes.RegisterXafRoutes();
             ASPxWebControl.CallbackError += new EventHandler(Application_Error);
-
 #if EASYTEST
-			DevExpress.ExpressApp.Web.TestScripts.TestScriptsManager.EasyTestEnabled = true;
+            DevExpress.ExpressApp.Web.TestScripts.TestScriptsManager.EasyTestEnabled = true;
 #endif
-
         }
         protected void Session_Start(Object sender, EventArgs e) {
+            Tracing.Initialize();
             WebApplication.SetInstance(Session, new E965AspNetApplication());
-#if EASYTEST
-			if(ConfigurationManager.ConnectionStrings["EasyTestConnectionString"] != null) {
-				WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
-			}
-#else
-            if (ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
+            DevExpress.ExpressApp.Web.Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit();
+            WebApplication.Instance.SwitchToNewStyle();
+            if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
                 WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             }
+            WebApplication.Instance.ConnectionString = InMemoryDataStoreProvider.ConnectionString;
+#if EASYTEST
+            if(ConfigurationManager.ConnectionStrings["EasyTestConnectionString"] != null) {
+                WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
+            }
 #endif
-			if(System.Diagnostics.Debugger.IsAttached && WebApplication.Instance.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
-				WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
-			}
+#if DEBUG
+            if(System.Diagnostics.Debugger.IsAttached && WebApplication.Instance.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
+                WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
+            }
+#endif
             WebApplication.Instance.Setup();
             WebApplication.Instance.Start();
         }
         protected void Application_BeginRequest(Object sender, EventArgs e) {
-            string filePath = HttpContext.Current.Request.PhysicalPath;
-            if (!string.IsNullOrEmpty(filePath)
-                && (filePath.IndexOf("Images") >= 0) && !System.IO.File.Exists(filePath)) {
-                HttpContext.Current.Response.End();
-            }
         }
         protected void Application_EndRequest(Object sender, EventArgs e) {
         }

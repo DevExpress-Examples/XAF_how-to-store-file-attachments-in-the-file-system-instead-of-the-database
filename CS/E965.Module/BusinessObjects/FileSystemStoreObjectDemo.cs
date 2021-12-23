@@ -1,6 +1,6 @@
-using DevExpress.Xpo;
-using DevExpress.Persistent.Base;
+﻿using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.Xpo;
 using FileSystemData.BusinessObjects;
 
 namespace E965.Module.BusinessObjects {

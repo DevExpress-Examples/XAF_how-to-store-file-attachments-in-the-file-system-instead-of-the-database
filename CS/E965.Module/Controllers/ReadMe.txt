@@ -1,19 +1,25 @@
 ﻿Folder Description
 
-The "Controllers" project folder is intended for storing platform-agnostic Controller classes 
+The "Controllers" project folder is intended for storing platform-agnostic Controller classes
 that can change the default XAF application flow and add new features.
 
 
 Relevant Documentation
 
-Extend Functionality
-http://help.devexpress.com/#Xaf/CustomDocument2623
+Controllers and Actions
+https://docs.devexpress.com/eXpressAppFramework/112623
 
-Controller Class
-http://help.devexpress.com/#Xaf/clsDevExpressExpressAppControllertopic
+Implement Custom Controllers
+https://docs.devexpress.com/eXpressAppFramework/112621
 
-ViewController Class
-http://help.devexpress.com/#Xaf/clsDevExpressExpressAppViewControllertopic
+Define the Scope of Controllers and Actions
+https://docs.devexpress.com/eXpressAppFramework/113103
 
-WindowController Class
-http://help.devexpress.com/#Xaf/clsDevExpressExpressAppWindowControllertopic
+Ways to Show a View
+https://docs.devexpress.com/eXpressAppFramework/112803
+
+Ways to Implement Business Logic
+https://docs.devexpress.com/eXpressAppFramework/113710
+
+Debugging, Unit and Functional Testing
+https://docs.devexpress.com/eXpressAppFramework/112572
