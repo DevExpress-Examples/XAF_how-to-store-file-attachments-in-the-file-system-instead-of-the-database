@@ -24,8 +24,9 @@ Refer to the following video to see this functionality in action: [http://www.sc
 
 ## IMPORTANT NOTES 
 
-1. The current version of this example does not support the middle-tier scenario. For more details, refer to the following ticket: [A problem occurs when file attachments are stored in the file system with middle-tier configuration](https://supportcenter.devexpress.com/ticket/details/q476039).  
-2. If you plan to migrate existing FileData objects from the database to a file system, you can use the techniques described in the [Data Manipulation and Business Logic](https://docs.devexpress.com/eXpressAppFramework/113708/data-manipulation-and-business-logic) help topic to create, read FileData objects and create new FileSystemStoreObject objects based on their content. Since both classes implement IFileData, you can call their LoadFromStream and SaveToStream methods to copy data. Even though we do not provide a ready example for this migration procedure, we hope that the example below will be helpful for getting started:  
+1. The *FileSystemLinkObject* class can be used in Winforms applications only.  
+2. The current version of this example does not support the middle-tier scenario. For more details, refer to the following ticket: [A problem occurs when file attachments are stored in the file system with middle-tier configuration](https://supportcenter.devexpress.com/ticket/details/q476039).  
+3. If you plan to migrate existing FileData objects from the database to a file system, you can use the techniques described in the [Data Manipulation and Business Logic](https://docs.devexpress.com/eXpressAppFramework/113708/data-manipulation-and-business-logic) help topic to create, read FileData objects and create new FileSystemStoreObject objects based on their content. Since both classes implement IFileData, you can call their LoadFromStream and SaveToStream methods to copy data. Even though we do not provide a ready example for this migration procedure, we hope that the example below will be helpful for getting started:  
 
 ```cs
 FileData fd = ObjectSpace.FindObject<FileData>(null); // Use any other IObjectSpace APIs to query required data.
@@ -49,5 +50,5 @@ Of course, you can rework this code to use UnitOfWork instead of IObjectSpace.
 ## See Also  
 - [File Attachments (Store Custom Files)](https://docs.devexpress.com/eXpressAppFramework/112781/document-management/file-attachments-module)  
 - [Working with links to files instead of storing their contents in the database](https://dennisgaravsky.blogspot.com/2012/10/working-with-links-to-files-instead-of.html)  
-- [XAF - Store file attachments in Dropbox instead of the database](https://github.com/egarim/FileDataDropBox) (XPO) ([videos](https://www.youtube.com/watch?v=lVfUeDj9T7U) and [additional information](https://www.bitframeworks.com/devexpress-xaf-cloud-filedata-module/) on XAF Cloud FileData Module by BitFrameworks  
+- [XAF - Store file attachments in Dropbox instead of the database](https://github.com/egarim/FileDataDropBox) (XPO) ([videos](https://www.youtube.com/watch?v=lVfUeDj9T7U) and [additional information](https://www.bitframeworks.com/devexpress-xaf-cloud-filedata-module/) on XAF Cloud FileData Module by BitFrameworks)  
 - [FILESTREAM (SQL Server)](https://docs.microsoft.com/en-us/sql/relational-databases/blob/filestream-sql-server?view=sql-server-ver15)  
