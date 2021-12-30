@@ -32,9 +32,10 @@ namespace E965.Module.Web {
         public override void CustomizeTypesInfo(ITypesInfo typesInfo) {
             base.CustomizeTypesInfo(typesInfo);
 
-            ITypeInfo typeInfo = typesInfo.FindTypeInfo(typeof(FileSystemLinkObjectDemo));
-            ((BaseInfo)typeInfo).RemoveAttribute(new DefaultClassOptionsAttribute());
-            ((BaseInfo)typeInfo).RemoveAttribute(new NavigationItemAttribute());
+            //FileSystemLinkObjectDemo is not supported in Web applications. It is hidden in the App Model, but you can also hide it by using the code below
+            //ITypeInfo typeInfo = typesInfo.FindTypeInfo(typeof(FileSystemLinkObjectDemo));
+            //((BaseInfo)typeInfo).RemoveAttribute(new DefaultClassOptionsAttribute());
+            //((BaseInfo)typeInfo).RemoveAttribute(new NavigationItemAttribute());
         }
     }
 }

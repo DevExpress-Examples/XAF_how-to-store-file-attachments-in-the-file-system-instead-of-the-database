@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Applications>
+    <!-- Win -->
+    <Application Name="E965Win" FileName="[WinAppBin]\E965.Win.exe" AdapterFileName="[WinAdapterFileName]" CommunicationPort="4100" />
+    <!-- Blazor -->
+    <Application Name="E965Blazor" Url="http://localhost:4030" PhysicalPath="[BlazorAppPath]" AdapterFileName="[BlazorAdapterAssemblyPath]" Configuration="EasyTest" IgnoreCase="true" />
+    <!-- Web -->
+    <Application Name="E965Web" UseIISExpress="True" Url="http://localhost:4030" PhysicalPath="[WebAppBin]" AdapterFileName="[WebAdapterAssemblyPath]" IgnoreCase="true" />
+    <!-- For IIS -->
+    <!--
+		<Application
+			Name="E965Web"
+			Url="http://localhost/E965.Web/Default.aspx"
+			AdapterFileName="[WebAdapterAssemblyPath]"
+			IgnoreCase="true"/>
+		-->
+  </Applications>
+  <TestDatabases>
+    <Database xsi:type="TestMSSQLDatabase" Server="(localdb)\mssqllocaldb" DBName="E965EasyTest" />
+  </TestDatabases>
+  <Aliases>
+    <Alias Name="WinAdapterFileName" Value="[WinAppBin]\DevExpress.ExpressApp.EasyTest.WinAdapter.v21.2.dll" />
+    <Alias Name="BlazorAdapterAssemblyPath" Value="[BlazorAppPath]\bin\EasyTest\net5.0\DevExpress.ExpressApp.EasyTest.BlazorAdapter.v21.2.dll" />
+    <Alias Name="WinAppBin" Value="[ConfigPath]\..\..\E965.Win\Bin\EasyTest\net5.0-windows" />
+    <Alias Name="BlazorAppPath" Value="[ConfigPath]\..\..\E965.Blazor.Server" />
+    <Alias Name="WebAdapterAssemblyPath" Value="[WebAppBin]\Bin\DevExpress.ExpressApp.EasyTest.SeleniumWebAdapter.v21.2.dll" />
+    <Alias Name="WebAppBin" Value="[ConfigPath]\..\..\E965.Web" />
+  </Aliases>
+</Options>
