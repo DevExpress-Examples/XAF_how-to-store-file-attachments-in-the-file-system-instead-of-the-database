@@ -11,14 +11,14 @@ namespace FileSystemData.BusinessObjects {
     /// <summary>
     /// This class enables you to add soft links to real files instead of saving their contents to the database. It is intended for use in Windows Forms applications only.
     /// </summary>
-    [DefaultProperty("FileName")]
+    [DefaultProperty(nameof(FileName))]
     public class FileSystemLinkObject : BaseObject, IFileData, IEmptyCheckable, ISupportFullName {
         public FileSystemLinkObject(Session session) : base(session) { }
         #region IFileData Members
         [Size(260), Custom("AllowEdit", "False")]
         public string FileName {
-            get { return GetPropertyValue<string>("FileName"); }
-            set { SetPropertyValue("FileName", value); }
+            get { return GetPropertyValue<string>(nameof(FileName)); }
+            set { SetPropertyValue(nameof(FileName), value); }
         }
         void IFileData.Clear() {
             Size = 0;
@@ -42,8 +42,8 @@ namespace FileSystemData.BusinessObjects {
         }
         [Persistent]
         public int Size {
-            get { return GetPropertyValue<int>("Size"); }
-            private set { SetPropertyValue<int>("Size", value); }
+            get { return GetPropertyValue<int>(nameof(Size)); }
+            private set { SetPropertyValue(nameof(Size), value); }
         }
         #endregion
         #region IEmptyCheckable Members
@@ -54,8 +54,8 @@ namespace FileSystemData.BusinessObjects {
         #region ISupportFullName Members
         [Size(260), Custom("AllowEdit", "False")]
         public string FullName {
-            get { return GetPropertyValue<string>("FullName"); }
-            set { SetPropertyValue<string>("FullName", value); }
+            get { return GetPropertyValue<string>(nameof(FullName)); }
+            set { SetPropertyValue(nameof(FullName), value); }
         }
         #endregion
     }

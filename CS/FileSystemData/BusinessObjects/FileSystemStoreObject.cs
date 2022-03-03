@@ -12,7 +12,7 @@ namespace FileSystemData.BusinessObjects {
     /// <summary>
     /// This class enables you to store uploaded files in a centralized file system location instead of the database. You can configure the file system store location via the static FileSystemDataModule.FileSystemStoreLocation property.
     /// </summary>
-    [DefaultProperty("FileName")]
+    [DefaultProperty(nameof(FileName))]
     public class FileSystemStoreObject : BaseObject, IFileData, IEmptyCheckable {
         private Stream tempSourceStream;
         private string tempFileName = string.Empty;
@@ -81,8 +81,8 @@ namespace FileSystemData.BusinessObjects {
         }
         [Size(260)]
         public string FileName {
-            get { return GetPropertyValue<string>("FileName"); }
-            set { SetPropertyValue("FileName", value); }
+            get { return GetPropertyValue<string>(nameof(FileName)); }
+            set { SetPropertyValue(nameof(FileName), value); }
         }
         [Browsable(false)]
         public Stream TempSourceStream {
@@ -129,14 +129,14 @@ namespace FileSystemData.BusinessObjects {
         }
         [Persistent]
         public int Size {
-            get { return GetPropertyValue<int>("Size"); }
-            private set { SetPropertyValue<int>("Size", value); }
+            get { return GetPropertyValue<int>(nameof(Size)); }
+            private set { SetPropertyValue(nameof(Size), value); }
         }
         #endregion
         #region IEmptyCheckable Members
         public bool IsEmpty {
             //T153149
-            get { return FileDataHelper.IsFileDataEmpty(this) || !(this.TempSourceStream!= null || File.Exists(RealFileName)); }
+            get { return FileDataHelper.IsFileDataEmpty(this) || !(TempSourceStream!= null || File.Exists(RealFileName)); }
         }
         #endregion
     }
