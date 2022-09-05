@@ -22,7 +22,7 @@ Refer to the following video to see this functionality in action: [http://www.sc
 4. Make sure you do not override the *DevExpress.Persistent.BaseImpl.BaseObject.OidInitializationMode* property in your application and related modules, because the *OidInitializationMode.AfterConstruction* value is necessary for the correct operation of this module (in the example, the required default value is already set in the *FileSystemDataModule* class of this example module).  
 5. Modify the *YourSolutionName.Win/WinApplication.xx* file to handle the *CustomOpenFileWithDefaultProgram* event of the *DevExpress.ExpressApp.FileAttachments.Win.FileAttachmentsWindowsFormsModule* class as shown in the *E965.Win\WinApplication.xx* file.  
 
-## IMPORTANT NOTES 
+## Important Notes 
 
 1. The *FileSystemLinkObject* class can be used in Winforms applications only.  
 2. The current version of this example does not support the middle-tier scenario. For more details, refer to the following ticket: [A problem occurs when file attachments are stored in the file system with middle-tier configuration](https://supportcenter.devexpress.com/ticket/details/q476039).  
