@@ -40,15 +40,18 @@ ObjectSpace.CommitChanges();
 
 Of course, you can rework this code to use UnitOfWork instead of IObjectSpace.  
 
-<!-- default file list -->
-## Files to look at  
+## Files to Review  
 
 * [FileSystemLinkObject.cs](./CS/FileSystemData/BusinessObjects/FileSystemLinkObject.cs) (VB: [FileSystemLinkObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemLinkObject.vb))
 * **[FileSystemStoreObject.cs](./CS/FileSystemData/BusinessObjects/FileSystemStoreObject.cs) (VB: [FileSystemStoreObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemStoreObject.vb))**
-<!-- default file list end -->
+
+## Documentation
+
+- [File Attachments (Store Custom Files)](https://docs.devexpress.com/eXpressAppFramework/112781/document-management/file-attachments-module)  
+
 
 ## See Also  
-- [File Attachments (Store Custom Files)](https://docs.devexpress.com/eXpressAppFramework/112781/document-management/file-attachments-module)  
+
 - [Working with links to files instead of storing their contents in the database](https://dennisgaravsky.blogspot.com/2012/10/working-with-links-to-files-instead-of.html)  
 - [XAF - Store file attachments in Dropbox instead of the database](https://github.com/egarim/FileDataDropBox) (XPO) ([videos](https://www.youtube.com/watch?v=lVfUeDj9T7U) and [additional information](https://www.bitframeworks.com/devexpress-xaf-cloud-filedata-module/) on XAF Cloud FileData Module by BitFrameworks)  
 - [FILESTREAM (SQL Server)](https://docs.microsoft.com/en-us/sql/relational-databases/blob/filestream-sql-server?view=sql-server-ver15)  
