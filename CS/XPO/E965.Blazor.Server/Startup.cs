@@ -14,7 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using E965.Blazor.Server.Services;
 using DevExpress.ExpressApp.WebApi.Services;
-using DevExpress.ExpressApp.WebApi.Swashbuckle;
+
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.OData;
 
@@ -37,12 +37,12 @@ namespace E965.Blazor.Server {
             services.AddSingleton<XpoDataStoreProviderAccessor>();
             services.AddScoped<CircuitHandler, CircuitHandlerProxy>();
             services.AddXaf<E965BlazorApplication>(Configuration);
-            services.AddXafWebApi(options => {
+            services.AddXafWebApi(Configuration, options => {
                 // Use options.BusinessObject<YourBusinessObject>() to make the Business Object available in the Web API and generate the GET, POST, PUT, and DELETE HTTP methods for it.
             });
-            services.AddControllers().AddOData(options => {
+            services.AddControllers().AddOData((options, serviceProvider) => {
                 options
-                    .AddRouteComponents("api/odata", new XafApplicationEdmModelBuilder(services).GetEdmModel())
+                    .AddRouteComponents("api/odata", new EdmModelBuilder(serviceProvider).GetEdmModel())
                     .EnableQueryFeatures(100);
             });
             services.AddSwaggerGen(c => {
@@ -52,7 +52,7 @@ namespace E965.Blazor.Server {
                     Version = "v1",
                     Description = @"Use AddXafWebApi(options) in the E965.Blazor.Server\Startup.cs file to make Business Objects available in the Web API."
                 });
-                c.SchemaFilter<XpoSchemaFilter>();
+                
             });
         }
 
