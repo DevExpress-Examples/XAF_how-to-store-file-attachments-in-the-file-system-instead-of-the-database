@@ -42,8 +42,8 @@ Of course, you can rework this code to use UnitOfWork instead of IObjectSpace.
 
 ## Files to Review  
 
-* [FileSystemLinkObject.cs](./CS/FileSystemData/BusinessObjects/FileSystemLinkObject.cs) (VB: [FileSystemLinkObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemLinkObject.vb))
-* **[FileSystemStoreObject.cs](./CS/FileSystemData/BusinessObjects/FileSystemStoreObject.cs) (VB: [FileSystemStoreObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemStoreObject.vb))**
+* [FileSystemLinkObject.cs](./CS/XPO/FileSystemData/BusinessObjects/FileSystemLinkObject.cs) (VB: [FileSystemLinkObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemLinkObject.vb))
+* **[FileSystemStoreObject.cs](./CS/XPO/FileSystemData/BusinessObjects/FileSystemStoreObject.cs) (VB: [FileSystemStoreObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemStoreObject.vb))**
 
 ## Documentation
 
