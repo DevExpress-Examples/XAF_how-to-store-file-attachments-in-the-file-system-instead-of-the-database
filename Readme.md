@@ -6,6 +6,9 @@
 
 # How to: Store file attachments in the file system instead of the database (XPO)  
 
+> **Note**  
+> The description of this example is currently under construction and may not match the code in the example. We are currently working to provide you with up-to-date content.
+
 ## Scenario  
 
 The *FileSystemData* module provides the *FileSystemStoreObject* and *FileSystemLinkObject* classes that implement the *IFileData* interface for the use with our [File Attachments module](https://docs.devexpress.com/eXpressAppFramework/112781/document-management/file-attachments-module).  
