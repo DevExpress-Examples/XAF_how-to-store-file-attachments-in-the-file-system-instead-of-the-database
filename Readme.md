@@ -4,35 +4,38 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# How to: Store file attachments in the file system instead of the database (XPO)  
+# How to: Store file attachments in the file system instead of the database (XPO and EF Core)  
 
-> **Note**  
-> The description of this example is currently under construction and may not match the code in the example. We are currently working to provide you with up-to-date content.
+## Basics  
 
-## Scenario  
+This example contains a **FileSystemDataModule** - an XAF module that you can reuse in your own applications. You will be interested in two types that allow you to attach a file to an object. Both types do not store the files in the database, but keep them in the file system:
 
-The *FileSystemData* module provides the *FileSystemStoreObject* and *FileSystemLinkObject* classes that implement the *IFileData* interface for the use with our [File Attachments module](https://docs.devexpress.com/eXpressAppFramework/112781/document-management/file-attachments-module).  
-* *FileSystemStoreObject* - this class enables you to store uploaded files in a centralized file system location instead of the database. You can configure the file system store location via the static *FileSystemDataModule.FileSystemStoreLocation* property.  
-* *FileSystemLinkObject* - this class enables you to add soft links to real files instead of saving their contents to the database. Apparently, it is intended for use in Windows Forms applications only.  
+* **FileSystemStoreObject** - stores files in a centralized file system location instead of the database. Use the module's static **FileSystemStoreLocation** property to specify the file location.  
+* **FileSystemLinkObject** - stores soft links to files instead of saving their contents to the database. This type is intended for use in WinForms applications only.
+
+Both types implement the **IFileData** interface and thus work with the DevExpress [File Attachments module](https://docs.devexpress.com/eXpressAppFramework/112781/document-management/file-attachments-module).
 
 Refer to the following video to see this functionality in action: [http://www.screencast.com/t/Xl1GMfxw](http://www.screencast.com/t/Xl1GMfxw).
 
 ## Steps to implement  
 
-1. Copy and include the ***FileSystemData*** project into your solution and make sure it is built successfully.  
-2. Register the FileSystemDataModule in code in the *YourSolutionName.Module/Module.xx* file as described in the following help topic: [Ways to Register a Module > Add a Module in Code](https://docs.devexpress.com/eXpressAppFramework/118047/application-shell-and-base-infrasctructure/application-solution-components/ways-to-register-a-module#code).  
-3. Define a *FileSystemStoreObject* or *FileSystemLinkObject* type properties within your business class as described in this help topic: [Implement File Data Properties](https://docs.devexpress.com/eXpressAppFramework/112658/business-model-design-orm/business-model-design-with-xpo/implement-file-data-properties). Make sure to decorate the container business class with the [FileAttachmentAttribute](https://docs.devexpress.com/eXpressAppFramework/DevExpress.Persistent.Base.FileAttachmentAttribute) (to provide additional commands for working with files) and also do not miss the Aggregated, ExpandObjectMembers(ExpandObjectMembers.Never) and ImmediatePostData attributes for the new class properties. See the *E965.Module\BusinessObjects\FileSystemStoreObjectDemo.xx* and *E965.Module\BusinessObjects\FileSystemLinkObjectDemo.xx*  source files for examples.  
-4. Make sure you do not override the *DevExpress.Persistent.BaseImpl.BaseObject.OidInitializationMode* property in your application and related modules, because the *OidInitializationMode.AfterConstruction* value is necessary for the correct operation of this module (in the example, the required default value is already set in the *FileSystemDataModule* class of this example module).  
-5. Modify the *YourSolutionName.Win/WinApplication.xx* file to handle the *CustomOpenFileWithDefaultProgram* event of the *DevExpress.ExpressApp.FileAttachments.Win.FileAttachmentsWindowsFormsModule* class as shown in the *E965.Win\WinApplication.xx* file.  
+1. Copy the "FileSystemData" project and include it into your solution. Rebuild the solution and make sure the new project was built successfully.  
+2. Register the **FileSystemDataModule** in the *YourSolutionName.Module/Module.xx* file as described in the following help topic: [Ways to Register a Module > Add a Module in Code](https://docs.devexpress.com/eXpressAppFramework/118047/application-shell-and-base-infrasctructure/application-solution-components/ways-to-register-a-module#code).  
+3. Extend a business class with a property that will hold file attachments. Choose the **FileSystemStoreObject** or **FileSystemLinkObject** type for the property. See descriptions above to compare the two types. 
+4. Add the following attributes to the file attachment property: **Aggregated**, **ExpandObjectMembers(ExpandObjectMembers.Never)** and **ImmediatePostData**.  
+5. Decorate the business class with the [FileAttachmentAttribute](https://docs.devexpress.com/eXpressAppFramework/DevExpress.Persistent.Base.FileAttachmentAttribute) that links to the new property. This attribute enables additional file management UI commands.
+6. Handle the **CustomOpenFileWithDefaultProgram** event of the *DevExpress.ExpressApp.FileAttachments.Win.FileAttachmentsWindowsFormsModule* class. Review the implementation in this example (*E965.Win\WinApplication.xx*). Move that code to the following file in your project: *YourSolutionName.Win/WinApplication.xx*.  
+7. **XPO Only**. Make sure that your application and related modules do not override the *DevExpress.Persistent.BaseImpl.BaseObject.OidInitializationMode* property. The property must return *OidInitializationMode.AfterConstruction* to ensure the correct operation of this module. (**FileSystemDataModule** sets this value as needed.)  
 
 ## Important Notes 
 
-1. The *FileSystemLinkObject* class can be used in Winforms applications only.  
-2. The current version of this example does not support the middle-tier scenario. For more details, refer to the following ticket: [A problem occurs when file attachments are stored in the file system with middle-tier configuration](https://supportcenter.devexpress.com/ticket/details/q476039).  
-3. If you plan to migrate existing FileData objects from the database to a file system, you can use the techniques described in the [Data Manipulation and Business Logic](https://docs.devexpress.com/eXpressAppFramework/113708/data-manipulation-and-business-logic) help topic to create, read FileData objects and create new FileSystemStoreObject objects based on their content. Since both classes implement IFileData, you can call their LoadFromStream and SaveToStream methods to copy data. Even though we do not provide a ready example for this migration procedure, we hope that the example below will be helpful for getting started:  
+1. The **FileSystemLinkObject** class can be used in WinForms applications only.  
+2. The current version of this example does not support the middle-tier scenario. For more information, refer to the following ticket: [A problem occurs when file attachments are stored in the file system with middle-tier configuration](https://supportcenter.devexpress.com/ticket/details/q476039).  
+3. If you plan to migrate existing **FileData** objects from the database to a file system, use the techniques described in the following topic: [Data Manipulation and Business Logic](https://docs.devexpress.com/eXpressAppFramework/113708/data-manipulation-and-business-logic). The article explains how you can read **FileData** objects and create new **FileSystemStoreObject** objects based on their content. Since both classes implement **IFileData**, you can call their **LoadFromStream()** and **SaveToStream()** methods to copy data. Even though we do not provide an example for this migration procedure, we hope that the snippet below help you get started:  
 
 ```cs
-FileData fd = ObjectSpace.FindObject<FileData>(null); // Use any other IObjectSpace APIs to query required data.
+// Use any other IObjectSpace APIs to query required data.
+FileData fd = ObjectSpace.FindObject<FileData>(null); 
 FileSystemStoreObject fss = ObjectSpace.CreateObject<FileSystemStoreObject>();
 Stream sourceStream = new MemoryStream();
 ((IFileData)fd).SaveToStream(sourceStream);
@@ -41,12 +44,17 @@ sourceStream.Position = 0;
 ObjectSpace.CommitChanges();
 ```
 
-Of course, you can rework this code to use UnitOfWork instead of IObjectSpace.  
+Note that you can rework this code to use **UnitOfWork** instead of **IObjectSpace**.  
 
-## Files to Review  
+## Files to Review (XPO)
 
 * [FileSystemLinkObject.cs](./CS/XPO/FileSystemData/BusinessObjects/FileSystemLinkObject.cs) (VB: [FileSystemLinkObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemLinkObject.vb))
-* **[FileSystemStoreObject.cs](./CS/XPO/FileSystemData/BusinessObjects/FileSystemStoreObject.cs) (VB: [FileSystemStoreObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemStoreObject.vb))**
+* [FileSystemStoreObject.cs](./CS/XPO/FileSystemData/BusinessObjects/FileSystemStoreObject.cs) (VB: [FileSystemStoreObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemStoreObject.vb))
+
+## Files to Review (EF Core)
+
+* [FileSystemLinkObject.cs](./CS/EFCore/FileSystemData/BusinessObjects/FileSystemLinkObject.cs) 
+* [FileSystemStoreObject.cs](./CS/EFCore/FileSystemData/BusinessObjects/FileSystemStoreObject.cs)
 
 ## Documentation
 
