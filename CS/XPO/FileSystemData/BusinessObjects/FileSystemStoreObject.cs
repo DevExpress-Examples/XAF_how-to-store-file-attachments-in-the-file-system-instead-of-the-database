@@ -117,7 +117,10 @@ namespace FileSystemData.BusinessObjects {
                     if (destination == null)
                         FileSystemDataModule.OpenFileWithDefaultProgram(RealFileName);
                     else
-                        FileSystemDataModule.CopyFileToStream(RealFileName, destination);
+                      if (File.Exists(RealFileName))  //user loads file and before save click on file 
+                      {
+                         FileSystemDataModule.CopyFileToStream(RealFileName, destination);
+                      }
                 }
                 else if (TempSourceStream != null)
                     FileSystemDataModule.CopyStream(TempSourceStream, destination);
