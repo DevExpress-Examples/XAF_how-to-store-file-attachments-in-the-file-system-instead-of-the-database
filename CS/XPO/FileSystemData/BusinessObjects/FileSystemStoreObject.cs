@@ -113,6 +113,9 @@ namespace FileSystemData.BusinessObjects {
         //Dennis: Fires when saving or opening a file.
         void IFileData.SaveToStream(Stream destination) {
             try {
+                if(!File.Exists(RealFileName)) {
+                    return;
+                }
                 if (!string.IsNullOrEmpty(RealFileName)) {
                     if (destination == null)
                         FileSystemDataModule.OpenFileWithDefaultProgram(RealFileName);
