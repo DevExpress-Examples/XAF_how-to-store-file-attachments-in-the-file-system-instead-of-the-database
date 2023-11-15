@@ -48,8 +48,8 @@ Note that you can rework this code to use **UnitOfWork** instead of **IObjectSp
 
 ## Files to Review (XPO)
 
-* [FileSystemLinkObject.cs](./CS/XPO/FileSystemData/BusinessObjects/FileSystemLinkObject.cs) (VB: [FileSystemLinkObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemLinkObject.vb))
-* [FileSystemStoreObject.cs](./CS/XPO/FileSystemData/BusinessObjects/FileSystemStoreObject.cs) (VB: [FileSystemStoreObject.vb](./VB/FileSystemData/BusinessObjects/FileSystemStoreObject.vb))
+* [FileSystemLinkObject.cs](./CS/XPO/FileSystemData/BusinessObjects/FileSystemLinkObject.cs) 
+* [FileSystemStoreObject.cs](./CS/XPO/FileSystemData/BusinessObjects/FileSystemStoreObject.cs) 
 
 ## Files to Review (EF Core)
 
