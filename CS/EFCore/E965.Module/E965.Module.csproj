@@ -18,8 +18,8 @@
     <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.2.2-beta" />
     <PackageReference Include="DevExpress.ExpressApp.EFCore" Version="22.2.2-beta" />
     <PackageReference Include="DevExpress.Persistent.BaseImpl.EFCore" Version="22.2.2-beta" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.10" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FileSystemData\FileSystemData.csproj" />
