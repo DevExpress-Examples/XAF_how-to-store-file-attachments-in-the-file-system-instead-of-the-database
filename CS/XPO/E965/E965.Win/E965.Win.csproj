@@ -28,16 +28,16 @@
     <EmbeddedResource Include="Images\ExpressAppLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.ExpressApp" Version="23.1.6" />
-    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="23.1.6" />
-    <PackageReference Include="DevExpress.ExpressApp.FileAttachment.Win" Version="23.1.6" />
-    <PackageReference Include="DevExpress.ExpressApp.Win" Version="23.1.6" />
-    <PackageReference Include="DevExpress.ExpressApp.Win.Design" Version="23.1.6" />
-    <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="23.1.6" />
-    <PackageReference Include="DevExpress.Persistent.Base" Version="23.1.6" />
-    <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="23.1.6" />
-    <PackageReference Include="DevExpress.RichEdit.Export" Version="23.1.6" />
-    <PackageReference Include="DevExpress.Win.Design" Version="23.1.6" />
+    <PackageReference Include="DevExpress.ExpressApp" Version="23.2.4" />
+    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="23.2.4" />
+    <PackageReference Include="DevExpress.ExpressApp.FileAttachment.Win" Version="23.2.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Win" Version="23.2.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Win.Design" Version="23.2.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="23.2.4" />
+    <PackageReference Include="DevExpress.Persistent.Base" Version="23.2.4" />
+    <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="23.2.4" />
+    <PackageReference Include="DevExpress.RichEdit.Export" Version="23.2.4" />
+    <PackageReference Include="DevExpress.Win.Design" Version="23.2.4" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\E965.Module\E965.Module.csproj" />

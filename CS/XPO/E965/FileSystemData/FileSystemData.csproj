@@ -23,10 +23,15 @@
 		<EmbeddedResource Remove="bin\**" />
 		<EmbeddedResource Remove="Properties\**" />
 		<None Remove="Properties\**" />
-	</ItemGroup>
+	
+    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="23.2.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="DevExpress.ExpressApp" Version="23.1.6" />
-        <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="23.1.6" />
-        <PackageReference Include="DevExpress.Xpo" Version="23.1.6" />
+        <PackageReference Include="DevExpress.ExpressApp" Version="23.2.4" />
+        <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="23.2.4" />
+        <PackageReference Include="DevExpress.Xpo" Version="23.2.4" />
     </ItemGroup>
 </Project>

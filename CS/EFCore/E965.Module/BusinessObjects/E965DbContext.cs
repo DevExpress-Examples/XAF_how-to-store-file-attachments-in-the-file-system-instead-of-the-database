@@ -32,7 +32,7 @@ public class E965DesignTimeDbContextFactory : IDesignTimeDbContextFactory<E965EF
 public class E965EFCoreDbContext : DbContext {
 	public E965EFCoreDbContext(DbContextOptions<E965EFCoreDbContext> options) : base(options) {
 	}
-	//public DbSet<ModuleInfo> ModulesInfo { get; set; }
+	public DbSet<StandardFileDataDemo> StandardFileDataDemo { get; set; }
 	public DbSet<FileSystemLinkObjectDemo> FileSystemLinkObjectDemo { get; set; }
 	public DbSet<FileSystemStoreObjectDemo> FileSystemStoreObjectDemo { get; set; }
 

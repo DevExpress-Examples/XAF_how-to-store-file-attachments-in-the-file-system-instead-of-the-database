@@ -21,8 +21,8 @@
 		<EmbeddedResource Remove="bin\**" />
 	</ItemGroup>
     <ItemGroup>
-        <PackageReference Include="DevExpress.ExpressApp" Version="22.2.2-beta" />
-        <PackageReference Include="DevExpress.Persistent.BaseImpl.EFCore" Version="22.2.2-beta" />
+        <PackageReference Include="DevExpress.ExpressApp" Version="23.2.4" />
+        <PackageReference Include="DevExpress.Persistent.BaseImpl.EFCore" Version="23.2.4" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Properties\" />
