@@ -8,5 +8,13 @@ namespace E965.Module.BusinessObjects {
     public class FileSystemStoreObjectDemo : BaseObject {
         [ExpandObjectMembers(ExpandObjectMembers.Never), ImmediatePostData]
         public virtual FileSystemStoreObject File { get; set; }
+
+        public override void OnSaving() {
+            base.OnSaving();
+            if (ObjectSpace.IsObjectToDelete(this) && File != null) {
+                ObjectSpace.Delete(File);
+                File.Clear();
+            }
+        }
     }
 }
