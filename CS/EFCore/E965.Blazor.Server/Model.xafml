@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
   <NavigationItems NavigationStyle="Accordion">
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="FileSystemLinkObjectDemo_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
   </NavigationItems>
-  <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
-  </Views>
+  <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor" />
 </Application>
