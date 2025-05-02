@@ -19,7 +19,6 @@
     <PackageReference Include="DevExpress.ExpressApp.EFCore" Version="23.2.4" />
     <PackageReference Include="DevExpress.Persistent.BaseImpl.EFCore" Version="23.2.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.10" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FileSystemData\FileSystemData.csproj" />
