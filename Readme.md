@@ -57,7 +57,7 @@ Of course, you can rework this code to use UnitOfWork instead of IObjectSpace.
 - [XAF - Store file attachments in Dropbox instead of the database](https://github.com/egarim/FileDataDropBox) (XPO) ([videos](https://www.youtube.com/watch?v=lVfUeDj9T7U) on XAF Cloud FileData Module by BitFrameworks)  
 - [FILESTREAM (SQL Server)](https://docs.microsoft.com/en-us/sql/relational-databases/blob/filestream-sql-server?view=sql-server-ver15)  
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=XAF_how-to-store-file-attachments-in-the-file-system-instead-of-the-database&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=XAF_how-to-store-file-attachments-in-the-file-system-instead-of-the-database&~~~was_helpful=no)
 
