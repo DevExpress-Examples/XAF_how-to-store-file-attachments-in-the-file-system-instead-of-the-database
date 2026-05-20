@@ -15,7 +15,6 @@ public class E965WindowsFormsApplication : WinApplication {
 		SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
         ApplicationName = "E965";
         CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
-        UseOldTemplates = false;
         DatabaseVersionMismatch += E965WindowsFormsApplication_DatabaseVersionMismatch;
         CustomizeLanguagesList += E965WindowsFormsApplication_CustomizeLanguagesList;
 
